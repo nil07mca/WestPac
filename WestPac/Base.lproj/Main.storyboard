@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z3t-ce-nNh">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favority City-->
+        <scene sceneID="Q6m-U9-Acb">
+            <objects>
+                <tableViewController title="Favority City" id="8er-M7-fzm" customClass="WPLocationsTableViewController" customModule="WestPac" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="spW-QS-AC7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationCell" textLabel="ca9-IQ-Pqh" style="IBUITableViewCellStyleDefault" id="wEe-DI-il5">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wEe-DI-il5" id="YZI-4C-fR4">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ca9-IQ-Pqh">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="8er-M7-fzm" id="65q-UX-b7m"/>
+                            <outlet property="delegate" destination="8er-M7-fzm" id="sh8-Zn-ctg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="J5X-5h-H2e"/>
+                    <connections>
+                        <segue destination="Taw-xn-tTD" kind="show" identifier="WeatherInfoView" id="r7n-eo-Nx4"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lx2-QC-vh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="391" y="701"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aJO-Fs-ah7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z3t-ce-nNh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T8n-SE-uIR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8er-M7-fzm" kind="relationship" relationship="rootViewController" id="AoO-mz-KcY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qNd-S0-2sC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-365" y="781"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="1lD-27-988">
+            <objects>
+                <viewController storyboardIdentifier="WeatherInfoView" id="Taw-xn-tTD" customClass="WPWeatherViewController" customModule="WestPac" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cdG-xs-rSj"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ttm-Am-YXk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kMj-dZ-ViA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" fixedFrame="YES" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="C7a-RE-pWL">
+                                <rect key="frame" x="263" y="167" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="C7a-RE-pWL" secondAttribute="height" multiplier="1:1" id="8cf-3X-1kD"/>
+                                    <constraint firstAttribute="width" constant="70" id="JYb-sT-FxE"/>
+                                    <constraint firstAttribute="height" constant="70" id="leK-U1-jPa"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8cf-3X-1kD"/>
+                                        <exclude reference="JYb-sT-FxE"/>
+                                        <exclude reference="leK-U1-jPa"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="165" y="91" width="70" height="70"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="8cf-3X-1kD"/>
+                                        <include reference="JYb-sT-FxE"/>
+                                        <include reference="leK-U1-jPa"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FeelsLike" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4O-VF-6Up">
+                                <rect key="frame" x="262" y="366" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="162" y="244" width="73" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="50°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcZ-aT-Kmj">
+                                <rect key="frame" x="250" y="250" width="96" height="106"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="152" y="146" width="96" height="106"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFG-EX-YKk">
+                                <rect key="frame" x="233" y="397" width="130" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="133" y="266" width="130" height="20"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ttm-Am-YXk" firstAttribute="top" secondItem="sFG-EX-YKk" secondAttribute="bottom" constant="376" id="1lp-jF-x68">
+                                <variation key="heightClass=regular-widthClass=compact" constant="239"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="C7a-RE-pWL" secondAttribute="trailing" constant="145" id="1qS-J5-unI"/>
+                            <constraint firstItem="mcZ-aT-Kmj" firstAttribute="leading" secondItem="kMj-dZ-ViA" secondAttribute="leadingMargin" constant="52" id="K7H-eV-z5b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mcZ-aT-Kmj" secondAttribute="trailing" constant="51" id="L4a-Bx-bcF"/>
+                            <constraint firstItem="C7a-RE-pWL" firstAttribute="leading" secondItem="kMj-dZ-ViA" secondAttribute="leadingMargin" constant="145" id="Pu9-WX-S9P"/>
+                            <constraint firstItem="sFG-EX-YKk" firstAttribute="top" secondItem="M4O-VF-6Up" secondAttribute="bottom" constant="8" id="WZ0-jS-Dr8"/>
+                            <constraint firstItem="M4O-VF-6Up" firstAttribute="leading" secondItem="kMj-dZ-ViA" secondAttribute="leadingMargin" constant="90" id="dNr-sz-8VO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sFG-EX-YKk" secondAttribute="trailing" constant="23" id="gSG-lP-wRx"/>
+                            <constraint firstItem="mcZ-aT-Kmj" firstAttribute="top" secondItem="C7a-RE-pWL" secondAttribute="bottom" constant="8" id="iNN-yH-car"/>
+                            <constraint firstItem="M4O-VF-6Up" firstAttribute="top" secondItem="mcZ-aT-Kmj" secondAttribute="bottom" constant="10" id="mZL-VO-Uha"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M4O-VF-6Up" secondAttribute="trailing" constant="90" id="nPd-Lo-8b8"/>
+                            <constraint firstItem="sFG-EX-YKk" firstAttribute="leading" secondItem="kMj-dZ-ViA" secondAttribute="leadingMargin" constant="23" id="zOe-NF-wpy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1qS-J5-unI"/>
+                                <exclude reference="Pu9-WX-S9P"/>
+                                <exclude reference="K7H-eV-z5b"/>
+                                <exclude reference="L4a-Bx-bcF"/>
+                                <exclude reference="iNN-yH-car"/>
+                                <exclude reference="dNr-sz-8VO"/>
+                                <exclude reference="mZL-VO-Uha"/>
+                                <exclude reference="nPd-Lo-8b8"/>
+                                <exclude reference="WZ0-jS-Dr8"/>
+                                <exclude reference="gSG-lP-wRx"/>
+                                <exclude reference="zOe-NF-wpy"/>
+                                <exclude reference="1lp-jF-x68"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="1qS-J5-unI"/>
+                                <include reference="Pu9-WX-S9P"/>
+                                <include reference="K7H-eV-z5b"/>
+                                <include reference="L4a-Bx-bcF"/>
+                                <include reference="iNN-yH-car"/>
+                                <include reference="dNr-sz-8VO"/>
+                                <include reference="mZL-VO-Uha"/>
+                                <include reference="nPd-Lo-8b8"/>
+                                <include reference="WZ0-jS-Dr8"/>
+                                <include reference="gSG-lP-wRx"/>
+                                <include reference="zOe-NF-wpy"/>
+                                <include reference="1lp-jF-x68"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imgWeatherIcon" destination="C7a-RE-pWL" id="EHu-jD-Nq1"/>
+                        <outlet property="lblFeelsLike" destination="M4O-VF-6Up" id="F0G-xy-33e"/>
+                        <outlet property="lblSummary" destination="sFG-EX-YKk" id="dO6-bl-MEO"/>
+                        <outlet property="lblTemparature" destination="mcZ-aT-Kmj" id="MDk-zd-6dn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zza-yi-uCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150.5" y="652.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cloudy" width="64" height="46"/>
+    </resources>
+</document>
